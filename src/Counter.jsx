@@ -1,32 +1,14 @@
 import React, { useReducer } from 'react'
 
-const Counter = () => {
-
-    const value = {
-        count: 0
-    };
-    function reducer(state, action) {
-        switch (action.type) {
-            case "add+":
-                return{count:state.count+1}
-            case "sub-":
-        return{count:state.count-1}
-
-
-            default:
-                return state;
-            
-        }
-    }
-     const [state, dispatch] = useReducer(reducer, value);
-
+const Counter = (p) => {
     return (
-        <div>
-<h2>count:{state.count}</h2>
-<button onClick={()=>dispatch({type:"add+"})}>add</button>
-<button onClick={()=>dispatch({type:"sub-"})}>add</button>
+        <div style={{ height: "200px", backgroundColor: "bisque" ,width:"250px", padding:"20px"}}>
+            <h1>{p.title}</h1>
+            <h3>{p.description}</h3>
+            <h3>{p.id}</h3>
         </div>
     )
+
 }
 
 export default Counter
